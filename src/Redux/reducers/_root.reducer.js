@@ -4,4 +4,5 @@ let testReducer = () => {
   return state;
 };
 
-let rootReducer = combineReducers({ testReducer });
+const rootReducer = combineReducers({ testReducer });
+export default rootReducer;
