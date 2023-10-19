@@ -1,2 +1,7 @@
 import { combineReducers } from 'redux';
-let rootReducer = combineReducers({});
+let testReducer = () => {
+  let state = {};
+  return state;
+};
+
+let rootReducer = combineReducers({ testReducer });
