@@ -10,10 +10,8 @@ export default function Home() {
     { name: 'Projects' },
     { name: 'Inventory' },
   ];
-  console.log('Helllllop');
   return (
     <View>
-      <Text>Home</Text>
       <FlatList
         data={pages}
         renderItem={({ item }) => (
@@ -24,7 +22,7 @@ export default function Home() {
               navigation.navigate(item.name);
             }}
           >
-            <Text>{item.name}HELLLLLLLLO</Text>
+            <Text>{item.name}</Text>
           </TouchableOpacity>
         )}
         style={{ width: '100' }}
