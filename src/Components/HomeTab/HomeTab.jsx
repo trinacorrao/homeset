@@ -1,9 +1,9 @@
 import {View, Text} from 'react-native';
 
-export default function Notifications() {
+export default function HomeTab() {
   return (
     <View>
-      <Text>Notifications</Text>
+      <Text>Home</Text>
     </View>
   );
 }
