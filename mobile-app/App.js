@@ -10,9 +10,9 @@ export default function App() {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Overlay>
+        {/* <Overlay> */}
           <BottomTabs />
-        </Overlay>
+        {/* </Overlay> */}
       </NavigationContainer>
     </Provider>
   );
