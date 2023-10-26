@@ -41,10 +41,11 @@
     "client": "react-scripts start",
     "server": "nodemon --watch server server.js",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "jest": "^27.5.1",
     "nodemon": "^2.0.4"
   },
   "browserslist": {

@@ -10,7 +10,9 @@ export default function App() {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <BottomTabs />
+        <Overlay>
+          <BottomTabs />
+        </Overlay>
       </NavigationContainer>
     </Provider>
   );

@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 import User from "./user";
+import Task from "./task";
 
 
 const connectDb = () => {
@@ -10,7 +11,7 @@ const connectDb = () => {
   });
 };
 
-const models = { User, };
+const models = { User, Task };
 
 export { connectDb };
 
