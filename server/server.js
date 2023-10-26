@@ -35,6 +35,11 @@ mongoose.connect(
 /* Routes */
 app.use('/api/atlas/user', userAtlasRouter);
 
+/* test route*/
+app.get('/api/data', (req, res) => {
+  res.json({ message: 'Hello, World!' });
+});
+
 // Serve static files
 app.use(express.static('build'));
 

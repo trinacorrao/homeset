@@ -1,5 +1,5 @@
 // const server = require("../server");
-const jest = require("@jest/globals");
+// const jest = require("@jest/globals");
 // const taskRouter = require("../routes/task.router")
 
 test("description", () => {
@@ -28,7 +28,7 @@ test("CreateRUD", () => {
 });
 
 test("description", () => {
-  expect(taskRouter.).toBe();
+  // expect(taskRouter.).toBe();
 });
 
 // {
@@ -40,3 +40,14 @@ test("description", () => {
 //   reminder: String,
 //   notes: String,
 // }
+
+const request = require('supertest');
+const app = require('../server');
+
+describe('Test Express Server', () => {
+  it('should return the expected response for GET /api/data', async () => {
+    const response = await request(app).get('/api/data');
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual({ message: 'Hello, World!' });
+  });
+});
