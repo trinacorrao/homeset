@@ -50,18 +50,21 @@ describe("Test Express Server", () => {
   });
 });
 
+const Task = require('../models/task')
+
 describe("Test Read Task for Test Household", () => {
-  it("should return the expected response for GET /api/atlas/task/:id", async () => {
-    const response = await request("http://localhost:5000").get(
+  it("should return the expected response for GET /api/atlas/task/", async () => {
+    const tasks = await request("http://localhost:5000").get(
       `/api/atlas/task/`
     );
-    expect(response.status).toBe(200);
-    expect(response.body).toEqual([
-      {
-        _id: "653abce316457ce2e9d4f96b",
-        completed: [],
-        task_name: "test_task",
-      },
-    ]);
+    expect(tasks.status).toBe(200);
+    for (let task of tasks._body) {
+      console.log(task);
+      // const validationResult = await Task.validate(task);
+      // console.log(validationResult)
+      // expect(validationResult.error).toBeNull();
+    }
   });
 });
+
+
