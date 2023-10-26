@@ -11,6 +11,10 @@ const sessionMiddleware = require('./modules/session-middleware');
 
 // Route includes
 const userAtlasRouter = require('./routes/userAtlas.router.js');
+const userTaskRouter = require('./routes/taskAtlas.router.js')
+
+// Test route
+const testRoute = require('./routes/testRoute.router')
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -34,11 +38,10 @@ mongoose.connect(
 
 /* Routes */
 app.use('/api/atlas/user', userAtlasRouter);
+app.use('/api/atlas/task', userTaskRouter);
 
 /* test route*/
-app.get('/api/data', (req, res) => {
-  res.json({ message: 'Hello, World!' });
-});
+app.use('/api/data', testRoute);
 
 // Serve static files
 app.use(express.static('build'));
