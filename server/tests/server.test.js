@@ -50,21 +50,62 @@ describe("Test Express Server", () => {
   });
 });
 
-const Task = require('../models/task')
+const Task = require("../models/task");
 
-describe("Test Read Task for Test Household", () => {
+describe("Test CRUD Task for Test Household", () => {
   it("should return the expected response for GET /api/atlas/task/", async () => {
     const tasks = await request("http://localhost:5000").get(
       `/api/atlas/task/`
     );
     expect(tasks.status).toBe(200);
+    const expectedKeys = [
+      "completed",
+      "_id",
+      "task_name",
+      "task_doer",
+      "ini_date",
+      "frequency",
+      "reminder",
+      "notes",
+    ];
     for (let task of tasks._body) {
-      console.log(task);
-      // const validationResult = await Task.validate(task);
-      // console.log(validationResult)
-      // expect(validationResult.error).toBeNull();
+      const taskKeys = Object.keys(task);
+      taskKeys.sort();
+      expectedKeys.sort();
+      // console.log(taskKeys, expectedKeys);
+      expect(taskKeys).toEqual(expectedKeys);
     }
   });
 });
 
+describe("second try", () => {
+  it("should return the expected response for POST /api/atlas/task/", async () => {
+    const responseData = {};
+    async () => {
+      const requestBody = {
+        task_name: "req.body.task_name",
+        task_doer: "req.body.task_doer",
+        ini_date: "req.body.ini_date",
+        frequency: "req.body.frequency",
+        completed: [],
+        reminder: "req.body.reminder",
+        reminder: "req.body.reminder",
+      };
+      const responseData = await request(app)
+        .post("/api/atlas/task")
+        .send(requestBody); // Include the req.body with .send()
 
+      await expect(responseData.status).toBe(201);
+      await expect(responseData.body).toBe({
+        task_name: "req.body.task_name",
+        task_doer: "req.body.task_doer",
+        ini_date: "req.body.ini_date",
+        frequency: "req.body.frequency",
+        completed: [],
+        reminder: "req.body.reminder",
+        reminder: "req.body.reminder",
+      });
+    };
+    console.log(responseData);
+  });
+});
