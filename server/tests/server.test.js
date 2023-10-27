@@ -61,6 +61,7 @@ describe("Test CRUD Task for Test Household", () => {
     const expectedKeys = [
       "completed",
       "_id",
+      "__v",
       "task_name",
       "task_doer",
       "ini_date",
@@ -72,14 +73,14 @@ describe("Test CRUD Task for Test Household", () => {
       const taskKeys = Object.keys(task);
       taskKeys.sort();
       expectedKeys.sort();
-      // console.log(taskKeys, expectedKeys);
+      console.log(taskKeys, expectedKeys);
       expect(taskKeys).toEqual(expectedKeys);
     }
   });
 });
 
 describe("second try", () => {
-  it("should return the expected response for POST /api/atlas/task/", async () => {
+  it("should return the expected response for POST /api/atlas/task/", () => {
     const responseData = {};
     async () => {
       const requestBody = {
@@ -91,10 +92,9 @@ describe("second try", () => {
         reminder: "req.body.reminder",
         reminder: "req.body.reminder",
       };
-      const responseData = await request(app)
+      responseData = await request(app)
         .post("/api/atlas/task")
         .send(requestBody); // Include the req.body with .send()
-
       await expect(responseData.status).toBe(201);
       await expect(responseData.body).toBe({
         task_name: "req.body.task_name",
@@ -103,7 +103,7 @@ describe("second try", () => {
         frequency: "req.body.frequency",
         completed: [],
         reminder: "req.body.reminder",
-        reminder: "req.body.reminder",
+        notes: "req.body.notes",
       });
     };
     console.log(responseData);
