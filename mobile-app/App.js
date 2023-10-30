@@ -1,27 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
+
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { store } from './src/Redux/store';
 import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
 import { NavigationContainer, useFocusEffect } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import BottomTabs from './src/Components/0-BottomTabs';
 import { ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
-
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY =
-  pk_test_Z2VuZXJvdXMtc2x1Zy0xMC5jbGVyay5hY2NvdW50cy5kZXYk;
+import Constants from 'expo-constants';
 
 export default function App() {
   return (
-    <ClerkProvider publishableKey={NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
+    <ClerkProvider
+      publishableKey={Constants.expoConfig.extra.clerkPublishableKey}
+    >
       <Provider store={store}>
-        <SafeAreaView>
+        <SafeAreaProvider>
           <SignedIn>
             <NavigationContainer>
               <BottomTabs />
             </NavigationContainer>
           </SignedIn>
-          <SignedOut></SignedOut>
-        </SafeAreaView>
+          <SignedOut>
+            <Text>You are signed out, SignIn page to live here</Text>
+          </SignedOut>
+        </SafeAreaProvider>
       </Provider>
     </ClerkProvider>
   );
