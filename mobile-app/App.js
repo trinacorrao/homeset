@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+
 import { store } from './src/Redux/store';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -18,7 +18,7 @@ export default function App() {
       publishableKey={Constants.expoConfig.extra.clerkPublishableKey}
     >
       <Provider store={store}>
-        <SafeAreaProvider>
+        <SafeAreaView>
           <SignedIn>
             <NavigationContainer>
               <BottomTabs />
@@ -27,7 +27,7 @@ export default function App() {
           <SignedOut>
             <Text>You are signed out, SignIn page to live here</Text>
           </SignedOut>
-        </SafeAreaProvider>
+        </SafeAreaView>
       </Provider>
     </ClerkProvider>
   );
