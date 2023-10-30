@@ -4,12 +4,12 @@ import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 
 import { store } from './src/Redux/store';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 
 import { NavigationContainer, useFocusEffect } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import BottomTabs from './src/Components/0-BottomTabs';
 import { ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
+import SignUpScreen from './src/Components/ClerkAuth/SignUpScreen';
 import Constants from 'expo-constants';
 
 export default function App() {
@@ -25,7 +25,7 @@ export default function App() {
             </NavigationContainer>
           </SignedIn>
           <SignedOut>
-            <Text>You are signed out, SignIn page to live here</Text>
+            <SignUpScreen />
           </SignedOut>
         </SafeAreaView>
       </Provider>
