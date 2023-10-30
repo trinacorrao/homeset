@@ -10,6 +10,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import BottomTabs from './src/Components/0-BottomTabs';
 import { ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
 import SignUpScreen from './src/Components/ClerkAuth/SignUpScreen';
+import SignInScreen from './src/Components/ClerkAuth/SignInScreen';
 import Constants from 'expo-constants';
 
 export default function App() {
@@ -25,7 +26,7 @@ export default function App() {
             </NavigationContainer>
           </SignedIn>
           <SignedOut>
-            <SignUpScreen />
+            <SignInScreen />
           </SignedOut>
         </SafeAreaView>
       </Provider>
