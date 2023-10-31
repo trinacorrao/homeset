@@ -17,13 +17,19 @@ export default function SignUpScreen() {
     }
 
     try {
-      await signUp.create({
-        emailAddress,
+      console.log('onSignUpPress isLoaded true', emailAddress, password);
+      let signUpResponse = await signUp.create({
         password,
+        emailAddress,
       });
+      console.log('SIGNUP', signUpResponse);
 
+      await signUp.validatePassword(password);
       // send the email.
-      await signUp.prepareEmailAddressVerification({ strategy: 'email_code' });
+      let prepEmailRes = await signUp.prepareEmailAddressVerification({
+        strategy: 'email_code',
+      });
+      console.log('EMAILRES', prepEmailRes);
 
       // change the UI to our pending section.
       setPendingVerification(true);
@@ -45,7 +51,7 @@ export default function SignUpScreen() {
 
       await setActive({ session: completeSignUp.createdSessionId });
     } catch (err) {
-      console.error(JSON.stringify(err, null, 2));
+      console.error('Email Verify failed', JSON.stringify(err, null, 2));
     }
   };
 

@@ -12,11 +12,31 @@ import { ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
 import SignUpScreen from './src/Components/ClerkAuth/SignUpScreen';
 import SignInScreen from './src/Components/ClerkAuth/SignInScreen';
 import Constants from 'expo-constants';
+import SignInWithOAuth from './src/Components/ClerkAuth/SignInWithOAuth';
+import * as SecureStore from 'expo-secure-store';
+
+const tokenCache = {
+  async getToken(key) {
+    try {
+      return SecureStore.getItemAsync(key);
+    } catch (err) {
+      return null;
+    }
+  },
+  async saveToken(key, value) {
+    try {
+      return SecureStore.setItemAsync(key, value);
+    } catch (err) {
+      return;
+    }
+  },
+};
 
 export default function App() {
   return (
     <ClerkProvider
       publishableKey={Constants.expoConfig.extra.clerkPublishableKey}
+      tokenCache={tokenCache}
     >
       <Provider store={store}>
         <SafeAreaView>
@@ -26,7 +46,7 @@ export default function App() {
             </NavigationContainer>
           </SignedIn>
           <SignedOut>
-            <SignInScreen />
+            <SignInWithOAuth />
           </SignedOut>
         </SafeAreaView>
       </Provider>
