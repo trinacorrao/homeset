@@ -39,16 +39,16 @@ export default function App() {
       tokenCache={tokenCache}
     >
       <Provider store={store}>
-        <SafeAreaView>
-          <SignedIn>
-            <NavigationContainer>
-              <BottomTabs />
-            </NavigationContainer>
-          </SignedIn>
-          <SignedOut>
+        <SignedIn>
+          <NavigationContainer>
+            <BottomTabs />
+          </NavigationContainer>
+        </SignedIn>
+        <SignedOut>
+          <SafeAreaView>
             <SignInWithOAuth />
-          </SignedOut>
-        </SafeAreaView>
+          </SafeAreaView>
+        </SignedOut>
       </Provider>
     </ClerkProvider>
   );
