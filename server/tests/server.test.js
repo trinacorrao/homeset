@@ -59,19 +59,20 @@ describe("Test CRUD Task for Test Household", () => {
     const expectedKeys = [
       "completed",
       "_id",
+      "__v",
       "task_name",
       "task_doer",
       "ini_date",
       "frequency",
       "reminder",
       "notes",
-      "__v",
     ];
     expectedKeys.sort();
     for (let task of tasks._body) {
       const taskKeys = Object.keys(task);
       taskKeys.sort();
-      // console.log(taskKeys, expectedKeys);
+      expectedKeys.sort();
+      console.log(taskKeys, expectedKeys);
       expect(taskKeys).toEqual(expectedKeys);
     }
   });
