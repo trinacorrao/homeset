@@ -17,6 +17,17 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  let reqBodyKeys = Object.keys(req.body);
+  // Check if required data is included in request
+  if (['task_name', 'task_doer', 'ini_date', 'frequency', 'completed', 'reminder', 'notes'].every((str) => reqBodyKeys.includes(str))) {
+    console.log("all keys included!")
+  } else {
+    console.log('missing keys')
+    res.send(500);
+    return;
+  }
+  // Check if data conforms to correct types
+
   // Create a new task
   const newTask = new Task({
     task_name: req.body.task_name,
@@ -25,11 +36,10 @@ router.post("/", async (req, res) => {
     frequency: req.body.frequency,
     completed: [],
     reminder: req.body.reminder,
-    reminder: req.body.reminder,
+    notes: req.body.reminder,
   });
   await newTask.save();
-  console.log(res);
-  res.json(newTask);
+  res.status(201).json(newTask);
 });
 
 module.exports = router;

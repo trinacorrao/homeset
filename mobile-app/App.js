@@ -7,6 +7,21 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import BottomTabs from './src/Components/0-BottomTabs';
 
 export default function App() {
+
+  const Overlay = ({ visible, closeModal }) => {
+    if (!visible) {
+      return null;
+    }
+  
+    return (
+      <TouchableOpacity
+        activeOpacity={1}
+        onPress={closeModal}
+        style={styles.overlay}
+      />
+    );
+  };
+
   return (
     <Provider store={store}>
       <NavigationContainer>
@@ -26,3 +41,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+
