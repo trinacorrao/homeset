@@ -1,6 +1,6 @@
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
-
 import { useNavigation } from '@react-navigation/native';
+import UserName from '../../ClerkAuth/UserName';
 
 export default function Home() {
   const navigation = useNavigation();
@@ -10,8 +10,10 @@ export default function Home() {
     { name: 'Projects' },
     { name: 'Inventory' },
   ];
+
   return (
     <View>
+      <UserName />
       <FlatList
         data={pages}
         renderItem={({ item }) => (
