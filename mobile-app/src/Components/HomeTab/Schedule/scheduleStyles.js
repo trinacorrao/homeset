@@ -13,7 +13,6 @@ export const scheduleStyles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
   },
-  task_leftview: {},
   task_rightview: {
     flexDirection: 'row',
     alignItems: 'center',

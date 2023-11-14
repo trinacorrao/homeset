@@ -11,7 +11,7 @@ export const MyCalendar = () => {
           console.log('selected day', day);
         }}
         markedDates={{
-          '2023-11-13': { selected: true, marked: true },
+          [today]: { selected: true, marked: true },
           '2023-06-24': { marked: true },
           '2023-06-26': {
             marked: true,
@@ -25,7 +25,8 @@ export const MyCalendar = () => {
           textSectionTitleColor: '#b6c1cd',
           selectedDayBackgroundColor: '#00adf5',
           selectedDayTextColor: '#ffffff',
-          todayTextColor: '#00adf5',
+          todayTextColor: '##00567a',
+          todayBackgroundColor: '#00adf5',
           dayTextColor: '#2d4150',
           textDisabledColor: '#d9e1e8',
           dotColor: '#00adf5',
