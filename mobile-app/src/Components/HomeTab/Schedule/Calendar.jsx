@@ -3,7 +3,8 @@ import { View } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 
 export const MyCalendar = () => {
-  let today = new Date();
+  let today = new Date().toISOString().slice(0, 10);
+  console.log('Today', today);
   return (
     <View>
       <Calendar
@@ -11,7 +12,7 @@ export const MyCalendar = () => {
           console.log('selected day', day);
         }}
         markedDates={{
-          [today]: { selected: true, marked: true },
+          [today]: { selected: true },
           '2023-06-24': { marked: true },
           '2023-06-26': {
             marked: true,
@@ -25,12 +26,12 @@ export const MyCalendar = () => {
           textSectionTitleColor: '#b6c1cd',
           selectedDayBackgroundColor: '#00adf5',
           selectedDayTextColor: '#ffffff',
-          todayTextColor: '##00567a',
-          todayBackgroundColor: '#00adf5',
+          todayTextColor: 'blue',
+          // todayBackgroundColor: '#00adf5',
           dayTextColor: '#2d4150',
           textDisabledColor: '#d9e1e8',
           dotColor: '#00adf5',
-          selectedDotColor: '#ffffff',
+          selectedDotColor: 'blue',
           arrowColor: '#00adf5',
           monthTextColor: '#00adf5',
           indicatorColor: 'blue',
