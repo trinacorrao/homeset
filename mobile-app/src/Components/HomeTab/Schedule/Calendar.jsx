@@ -4,21 +4,18 @@ import { Calendar } from 'react-native-calendars';
 
 export const MyCalendar = () => {
   let today = new Date().toISOString().slice(0, 10);
-  console.log('Today', today);
+  const [selectedDay, setSelectedDay] = React.useState(today);
+
   return (
     <View>
       <Calendar
         onDayPress={(day) => {
-          console.log('selected day', day);
+          console.log('Selected day', day);
+          setSelectedDay(day.dateString);
         }}
         markedDates={{
-          [today]: { selected: true },
-          '2023-06-24': { marked: true },
-          '2023-06-26': {
-            marked: true,
-            dotColor: 'red',
-            activeOpacity: 0,
-          },
+          [today]: { marked: true },
+          [selectedDay]: { selected: true },
         }}
         theme={{
           backgroundColor: '#ffffff',
