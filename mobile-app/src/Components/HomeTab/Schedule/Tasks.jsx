@@ -10,12 +10,14 @@ import { testData } from './HardCodedData';
 import ListItem from './ListItem';
 import { scheduleStyles } from './scheduleStyles';
 
-export default function Tasks() {
+export default function Tasks({ selectedDay }) {
+  console.log('DAy:', selectedDay);
+
   return (
     <View>
       <View>
         <FlatList
-          data={testData}
+          data={testData[selectedDay]}
           style={{ margin: 5 }}
           renderItem={({ item }) => <ListItem item={item} />}
         />

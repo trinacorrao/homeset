@@ -2,16 +2,15 @@ import React from 'react';
 import { View } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 
-export const MyCalendar = () => {
+export const MyCalendar = ({ selectedDay, updateSelectedDay }) => {
   let today = new Date().toISOString().slice(0, 10);
-  const [selectedDay, setSelectedDay] = React.useState(today);
 
   return (
     <View>
       <Calendar
         onDayPress={(day) => {
           console.log('Selected day', day);
-          setSelectedDay(day.dateString);
+          updateSelectedDay(day.dateString);
         }}
         markedDates={{
           [today]: { marked: true },
