@@ -9,6 +9,8 @@ const app = express();
 const router = express.Router();
 console.log("in users router");
 
+//this will need to be reconfigued to handle multiple users later
+
 // Define your routes and endpoints
 router.get("/", async (req, res) => {
   // Get all tasks
