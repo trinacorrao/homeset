@@ -50,6 +50,21 @@ const SignOut = () => {
 };
 
 export default function App() {
+
+  const Overlay = ({ visible, closeModal }) => {
+    if (!visible) {
+      return null;
+    }
+  
+    return (
+      <TouchableOpacity
+        activeOpacity={1}
+        onPress={closeModal}
+        style={styles.overlay}
+      />
+    );
+  };
+
   return (
     <ClerkProvider
       publishableKey={Constants.expoConfig.extra.clerkPublishableKey}
@@ -82,3 +97,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+
