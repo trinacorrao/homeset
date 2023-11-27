@@ -4,7 +4,7 @@ import { homeStyles } from '../HomeTab/Home/homeStyles';
 
 export default function Favorites() {
   return (
-    <LinearGradient colors={['#e9eff7', '#fbdbc7']} style={homeStyles.gradientContainer}>
+    <LinearGradient colors={['#e9eff7', '#fcdabf']} style={homeStyles.gradientContainer}>
       <View>
         <Text>Favorites</Text>
       </View>
