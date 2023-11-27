@@ -41,6 +41,20 @@ export const homeStyles = StyleSheet.create({
       color: '#033596',
       marginTop: 10,
     },
+    headingText: {
+      fontSize: 52,
+      fontWeight: 'bold',
+      fontFamily: 'Georgia',
+      color: '#033596',
+      marginTop: 10,
+    },
+    subText: {
+      fontSize: 20,
+      fontWeight: 'bold',
+      fontFamily: 'Georgia',
+      color: '#033596',
+      marginTop: 10,
+    },
     signOutStyle: {
       alignItems: 'flex-end',
       justifyContent: 'flex-end',
