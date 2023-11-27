@@ -12,9 +12,14 @@ export const homeStyles = StyleSheet.create({
       justifyContent: 'space-between',
       marginTop: 10,
     },
+    gradientContainer: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
     button: {
       flex: 1,
-      backgroundColor: 'white',
+      backgroundColor: '#F2F2F7',
       borderRadius: 8,
       elevation: 3,
       margin: 10,
@@ -27,6 +32,12 @@ export const homeStyles = StyleSheet.create({
     buttonText: {
       fontSize: 18,
       fontWeight: 'bold',
+      marginTop: 10,
+    },
+    welcomeText: {
+      fontSize: 32,
+      fontWeight: 'bold',
+      color: '#033596',
       marginTop: 10,
     },
   });
