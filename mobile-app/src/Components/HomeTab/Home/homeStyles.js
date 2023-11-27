@@ -20,7 +20,7 @@ export const homeStyles = StyleSheet.create({
     button: {
       flex: 1,
       backgroundColor: '#F2F2F7',
-      borderRadius: 8,
+      borderRadius: 20,
       elevation: 3,
       margin: 10,
     },
@@ -30,7 +30,7 @@ export const homeStyles = StyleSheet.create({
       padding: 40,
     },
     buttonText: {
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: 'bold',
       color: '#007AFF',
       marginTop: 10,
@@ -40,5 +40,10 @@ export const homeStyles = StyleSheet.create({
       fontWeight: 'bold',
       color: '#033596',
       marginTop: 10,
+    },
+    signOutStyle: {
+      alignItems: 'flex-end',
+      justifyContent: 'flex-end',
+      paddingRight: 15,
     },
   });

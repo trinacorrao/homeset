@@ -11,7 +11,7 @@ export default function HomeTab() {
 
   return (
     <View style={{ height: "100%" }}>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Home" >
         {/* Similar to a Route */}
 
         <Stack.Screen name="Inventory" component={Inventory} />

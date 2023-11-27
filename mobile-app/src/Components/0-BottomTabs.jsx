@@ -31,7 +31,7 @@ export default function BottomTabs() {
         options={{
           tabBarLabel: 'Spaces',
           tabBarIcon: ({ size, color }) => (
-          <Ionicons name="business-outline" size={size} color={color} />
+          <Ionicons name="cube-outline" size={size} color={color} />
           ),
         }} 
       ></Tab.Screen>
@@ -41,7 +41,7 @@ export default function BottomTabs() {
         options={{
           tabBarLabel: 'Stuff',
           tabBarIcon: ({ size, color }) => (
-          <Ionicons name="cube-outline" size={size} color={color} />
+          <Ionicons name="file-tray-stacked-outline" size={size} color={color} />
           ),
         }}
       ></Tab.Screen>
