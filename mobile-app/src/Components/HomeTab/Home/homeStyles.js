@@ -10,11 +10,16 @@ export const homeStyles = StyleSheet.create({
     buttonContainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
-      marginTop: 10,
+      marginTop: 5,
+    },
+    gradientContainer: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     button: {
       flex: 1,
-      backgroundColor: 'white',
+      backgroundColor: '#F2F2F7',
       borderRadius: 8,
       elevation: 3,
       margin: 10,
@@ -22,11 +27,18 @@ export const homeStyles = StyleSheet.create({
     buttonContent: {
       alignItems: 'center',
       justifyContent: 'center',
-      padding: 45,
+      padding: 40,
     },
     buttonText: {
       fontSize: 18,
       fontWeight: 'bold',
+      color: '#007AFF',
+      marginTop: 10,
+    },
+    welcomeText: {
+      fontSize: 32,
+      fontWeight: 'bold',
+      color: '#033596',
       marginTop: 10,
     },
   });
