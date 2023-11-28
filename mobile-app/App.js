@@ -14,6 +14,7 @@ import SignInScreen from './src/Components/ClerkAuth/SignInScreen';
 import Constants from 'expo-constants';
 import SignInWithOAuth from './src/Components/ClerkAuth/SignInWithOAuth';
 import * as SecureStore from 'expo-secure-store';
+import { homeStyles } from './src/Components/HomeTab/Home/homeStyles';
 
 const tokenCache = {
   async getToken(key) {
@@ -38,7 +39,7 @@ const SignOut = () => {
     return null;
   }
   return (
-    <View>
+    <View style={homeStyles.signOutStyle}>
       <Button
         title="Sign Out"
         onPress={() => {

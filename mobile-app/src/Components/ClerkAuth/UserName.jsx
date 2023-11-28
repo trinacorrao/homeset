@@ -6,7 +6,7 @@ export default function UserName() {
   const { isLoaded, isSignedIn, user } = useUser();
   return (
     <View>
-      <Text style={homeStyles.welcomeText}>Hello, {user.firstName}</Text>
+      <Text style={homeStyles.welcomeText}>Welcome, {user.firstName}!</Text>
     </View>
   );
 }

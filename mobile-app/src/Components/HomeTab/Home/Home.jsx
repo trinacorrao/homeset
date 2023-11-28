@@ -35,7 +35,7 @@ export default function Home() {
 
   return (
     <LinearGradient
-    colors={['#e9eff7', '#fbdbc7']} // Blue to Orange gradient
+    colors={['#e9eff7', '#fcdabf']} // Blue to Orange gradient
     style={homeStyles.gradientContainer}
     >
       <View style={homeStyles.container}>
