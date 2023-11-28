@@ -5,7 +5,7 @@ export const homeStyles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      padding: 20,
+      padding: 5,
     },
     buttonContainer: {
       flexDirection: 'row',
@@ -22,18 +22,22 @@ export const homeStyles = StyleSheet.create({
       backgroundColor: '#F2F2F7',
       borderRadius: 20,
       elevation: 3,
+      padding: 10,
       margin: 10,
+      flexWrap: 'nowrap',
     },
     buttonContent: {
       alignItems: 'center',
       justifyContent: 'center',
-      padding: 40,
+      padding: 10,
+      height: 170,
     },
     buttonText: {
       fontSize: 16,
       fontWeight: 'bold',
       color: '#007AFF',
       marginTop: 10,
+      textAlign: 'center',
     },
     welcomeText: {
       fontSize: 32,
