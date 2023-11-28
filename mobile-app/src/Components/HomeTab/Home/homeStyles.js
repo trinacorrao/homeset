@@ -62,10 +62,10 @@ export const homeStyles = StyleSheet.create({
     signOutStyle: {
       alignItems: 'flex-end',
       justifyContent: 'flex-end',
-      paddingRight: 40,
+      paddingRight: 10,
       ...Platform.select({
         android: {
-          paddingTop: 25, // Add top padding for Android Sign Out Button
+          paddingTop: 40, // Add top padding for Android Sign Out Button
         },
       }),
     },
