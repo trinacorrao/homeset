@@ -49,6 +49,11 @@ export const homeStyles = StyleSheet.create({
       fontSize: 52,
       fontWeight: 'bold',
       fontFamily: 'Georgia',
+      ...Platform.select({
+        android: {
+          fontFamily: 'serif', // Android compatible font
+        },
+      }),
       color: '#033596',
       marginTop: 10,
     },
@@ -56,6 +61,11 @@ export const homeStyles = StyleSheet.create({
       fontSize: 20,
       fontWeight: 'bold',
       fontFamily: 'Georgia',
+      ...Platform.select({
+        android: {
+          fontFamily: 'serif', // Android compatible font
+        },
+      }),
       color: '#033596',
       marginTop: 10,
     },
